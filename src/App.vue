@@ -1,0 +1,236 @@
+<script setup>
+import { ref, computed } from 'vue'
+
+const currentDay = ref(0)
+
+const itinerary = [
+  {
+    day: 'Day 1',
+    date: 'Arrival & Naha',
+    type: 'schedule',
+    schedule: [
+      { time: '13:00', activity: '那霸機場 (拿行李+坐接駁車到OTS臨空豐崎營業所取車)', icon: '✈️', link: 'https://www.google.com/maps/search/?api=1&query=Naha+Airport' },
+      { time: '15:00', activity: '取車 (OTS臨空豐崎營業所)', icon: '🚗', link: 'https://maps.app.goo.gl/uQYeBNRCmtHrYvRj9' },
+      { time: '15:30', activity: '開車出發', icon: '💨' },
+      { time: '15:45', activity: '波上宮', icon: '⛩️', link: 'https://www.google.com/maps/search/?api=1&query=Naminoue+Shrine' },
+      { time: '17:00', activity: '出發', icon: '💨' },
+      { time: '18:00', activity: '找晚餐 (美國村)', icon: '🎡', link: 'https://www.google.com/maps/search/?api=1&query=American+Village+Okinawa' },
+      { time: '20:00', activity: '出發', icon: '💨' },
+      { time: '20:30', activity: '民宿 Okinawa Kona Garden', icon: '🏠', link: 'https://www.google.com/maps/search/?api=1&query=Okinawa+Kona+Garden' },
+    ]
+  },
+  {
+    day: 'Day 2',
+    date: 'Aquarium & Beef',
+    type: 'schedule',
+    schedule: [
+      { time: '10:00', activity: '出發', icon: '🚗' },
+      { time: '11:20', activity: '美麗海水族館 (裡面有午餐)', icon: '🐋', link: 'https://www.google.com/maps/search/?api=1&query=Okinawa+Churaumi+Aquarium' },
+      { time: '17:00', activity: '回程', icon: '↩️' },
+      { time: '18:30', activity: '燒肉 琉球の牛 恩納店', icon: '🥩', link: 'https://www.google.com/maps/search/?api=1&query=Ryukyu+no+Ushi+Onna' },
+      { time: '20:00', activity: '出發', icon: '💨' },
+      { time: '20:20', activity: '民宿', icon: '🏠' },
+    ]
+  },
+  {
+    day: 'Day 3',
+    date: 'Zoo & Seafood',
+    type: 'schedule',
+    schedule: [
+      { time: '10:00', activity: '出發', icon: '🚗' },
+      { time: '10:40', activity: '兒童王國', icon: '🦁', link: 'https://www.google.com/maps/search/?api=1&query=Okinawa+Zoo+%26+Museum' },
+      { time: '16:00', activity: '出發', icon: '💨' },
+      { time: '16:20', activity: '泡瀨漁港 (晚餐)', icon: '🦞', link: 'https://www.google.com/maps/search/?api=1&query=Awase+Fish+Market' },
+      { time: '18:00', activity: '出發', icon: '💨' },
+      { time: '19:00', activity: '民宿 check in (Chura Gahna House Tsubogawa Naha)', icon: '🏨', link: 'https://www.google.com/maps/search/?api=1&query=Chura+Gahna+House+Tsubogawa+Naha' },
+    ]
+  },
+  {
+    day: 'Day 4',
+    date: 'Shopping & Park',
+    type: 'schedule',
+    schedule: [
+      { time: '09:30', activity: '出發', icon: '🚗' },
+      { time: '10:10', activity: '宜野灣海濱公園', icon: '🏞️', link: 'https://www.google.com/maps/search/?api=1&query=Ginowan+Seaside+Park' },
+      { time: '12:00', activity: '出發', icon: '💨' },
+      { time: '12:20', activity: 'PARCO CITY (萬代扭蛋)', icon: '🛍️', link: 'https://www.google.com/maps/search/?api=1&query=PARCO+CITY+Okinawa' },
+      { time: '17:00', activity: '出發', icon: '💨' },
+      { time: '17:40', activity: '民宿 (Chura Gahna House Tsubogawa Naha)', icon: '🏨', link: 'https://www.google.com/maps/search/?api=1&query=Chura+Gahna+House+Tsubogawa+Naha' },
+      { time: '18:30', activity: '國際通吃晚餐逛街', icon: '🍜', link: 'https://www.google.com/maps/search/?api=1&query=Kokusai+Dori' },
+    ]
+  },
+  {
+    day: 'Day 5',
+    date: 'Culture & Depature',
+    type: 'schedule',
+    schedule: [
+      { time: '10:00', activity: '出發', icon: '🚗' },
+      { time: '10:20', activity: '達摩寺', icon: '🏯', link: 'https://www.google.com/maps/search/?api=1&query=Daruma+Temple+Okinawa' },
+      { time: '11:00', activity: '出發', icon: '💨' },
+      { time: '11:30', activity: '玉泉洞', icon: '💧', link: 'https://www.google.com/maps/search/?api=1&query=Gyokusendo+Cave' },
+      { time: '14:00', activity: '出發', icon: '💨' },
+      { time: '14:30', activity: 'iias 沖繩豐崎 (萬代扭蛋+DDM)', icon: '🛍️', link: 'https://www.google.com/maps/search/?api=1&query=iias+Okinawa+Toyosaki' },
+      { time: '17:00', activity: '出發', icon: '💨' },
+      { time: '17:15', activity: 'OTS臨空豐崎營業所', icon: '🚗', link: 'https://www.google.com/maps/search/?api=1&query=OTS+Rinku+Toyosaki' },
+      { time: '18:30', activity: '前到那霸機場', icon: '✈️', link: 'https://www.google.com/maps/search/?api=1&query=Naha+Airport' },
+    ]
+  },
+  {
+    day: '景點',
+    date: 'Must Visit',
+    type: 'gallery',
+    regions: [
+      {
+        name: '地圖',
+        places: [
+          { name: 'Okinawa Churaumi Aquarium', image: 'https://bobbyfun.tw/wp-content/uploads/2025/06/20250815004726_0_032993.jpg' },
+        ]
+      }
+    ]
+  }
+]
+
+const currentItem = computed(() => itinerary[currentDay.value])
+</script>
+
+<template>
+  <div class="min-h-screen bg-slate-950 text-slate-50 font-sans selection:bg-purple-500/30">
+    <!-- Background Elements -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+      <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-purple-600/20 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-blue-600/20 rounded-full blur-[120px]"></div>
+    </div>
+
+    <div class="w-[80vw] mx-auto px-4 py-12 min-h-screen flex flex-col">
+      <!-- Header -->
+      <header class="text-center mb-12 animate-fade-in">
+        <h1 class="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 mb-4 drop-shadow-sm tracking-tight">
+          Okinawa Trip 🌴
+        </h1>
+        <p class="text-slate-400">Your 5-day adventure plan</p>
+      </header>
+
+      <!-- Tabs Navigation -->
+      <div class="flex flex-wrap justify-center gap-2 mb-10 p-1 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 mx-auto w-full md:w-auto">
+        <button
+          v-for="(item, index) in itinerary"
+          :key="index"
+          @click="currentDay = index"
+          class="relative px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 outline-none focus:ring-2 focus:ring-blue-500/50"
+          :class="currentDay === index ? 'text-white shadow-lg shadow-blue-500/25' : 'text-slate-400 hover:text-white hover:bg-white/5'"
+        >
+          <div v-if="currentDay === index" class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl -z-10 opacity-100 transition-opacity"></div>
+          <span class="relative z-10">{{ item.day }}</span>
+        </button>
+      </div>
+
+      <!-- Main Content Area -->
+      <main class="flex-1">
+        <div class="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl overflow-hidden transition-all duration-500" :key="currentDay">
+          <!-- Decorative Header for Card -->
+          <div class="flex items-end justify-between mb-8 border-b border-white/10 pb-4">
+            <div>
+              <h2 class="text-2xl font-bold text-white mb-1">{{ currentItem.day }}</h2>
+            </div>
+            <div class="hidden md:block opacity-20 text-6xl">
+              {{ currentItem.type === 'gallery' ? '📸' : '🏖️' }}
+            </div>
+          </div>
+
+          <!-- Schedule View -->
+          <div v-if="currentItem.type === 'schedule'" class="relative space-y-0">
+            <!-- Vertical Line -->
+            <div class="absolute left-[27px] top-4 bottom-4 w-0.5 bg-gradient-to-b from-blue-500/50 via-purple-500/50 to-transparent"></div>
+
+            <div 
+              v-for="(item, idx) in currentItem.schedule" 
+              :key="idx" 
+              class="relative flex group items-start gap-6 py-4 transition-all duration-300 hover:translate-x-1"
+            >
+              <!-- Time & Icon -->
+              <div class="flex flex-col items-center flex-shrink-0 w-14 z-10">
+                <a 
+                  v-if="item.link" 
+                  :href="item.link" 
+                  target="_blank"
+                  class="w-14 h-14 rounded-2xl bg-slate-900 border border-white/10 flex items-center justify-center text-2xl shadow-lg group-hover:scale-110 group-hover:border-blue-500/50 transition-all duration-300 relative cursor-pointer"
+                >
+                   <div class="absolute inset-0 bg-blue-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                   {{ item.icon }}
+                </a>
+                <div 
+                  v-else
+                  class="w-14 h-14 rounded-2xl bg-slate-900 border border-white/10 flex items-center justify-center text-2xl shadow-lg group-hover:scale-110 group-hover:border-blue-500/50 transition-all duration-300 relative"
+                >
+                  <div class="absolute inset-0 bg-blue-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  {{ item.icon }}
+                </div>
+              </div>
+              
+              <!-- Content -->
+              <div class="flex-1 pt-2">
+                <span class="inline-block px-2 py-0.5 rounded-md bg-white/5 text-blue-300 text-xs font-mono mb-1 border border-white/5">
+                  {{ item.time }}
+                </span>
+                
+                <a 
+                  v-if="item.link" 
+                  :href="item.link" 
+                  target="_blank"
+                  class="block text-slate-200 text-lg leading-snug font-medium group-hover:text-white transition-colors hover:text-blue-400 hover:underline decoration-blue-500/30 underline-offset-4"
+                >
+                   {{ item.activity }} <span class="text-sm opacity-50 ml-1">↗</span>
+                </a>
+                <p 
+                  v-else
+                  class="text-slate-200 text-lg leading-snug font-medium group-hover:text-white transition-colors"
+                >
+                  {{ item.activity }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery View -->
+          <div v-else-if="currentItem.type === 'gallery'" class="space-y-8">
+            <div v-for="region in currentItem.regions" :key="region.name" class="animate-fade-in">
+              <h3 class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-300 mb-4 pl-2 border-l-4 border-blue-500/50">
+                {{ region.name }}
+              </h3>
+              <div class="grid grid-cols-1 gap-4">
+                <div 
+                  v-for="place in region.places" 
+                  :key="place.name"
+                  class="group relative rounded-xl overflow-hidden bg-slate-800 border border-white/10 shadow-lg"
+                >
+                  <img 
+                    :src="place.image" 
+                    :alt="place.name"
+                    class="w-full h-auto transition-transform duration-700 ease-in-out"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </main>
+
+      <footer class="mt-12 text-center text-slate-600 text-sm">
+        Travel better, together.
+      </footer>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
