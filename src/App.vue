@@ -10,13 +10,13 @@ const itinerary = [
     type: 'schedule',
     schedule: [
       { time: '13:00', activity: '那霸機場 (拿行李+坐接駁車到OTS臨空豐崎營業所取車)', icon: '✈️', link: 'https://www.google.com/maps/search/?api=1&query=Naha+Airport' },
-      { time: '15:00', activity: '取車 (OTS臨空豐崎營業所)', icon: '🚗', link: 'https://maps.app.goo.gl/uQYeBNRCmtHrYvRj9' },
+      { time: '15:00', activity: '取車 (OTS臨空豐崎營業所)', icon: '🚗', link: 'https://www.google.com/maps/search/?api=1&query=OTS臨空豐崎營業所' },
       { time: '15:30', activity: '開車出發', icon: '💨' },
       { time: '15:45', activity: '波上宮', icon: '⛩️', link: 'https://www.google.com/maps/search/?api=1&query=Naminoue+Shrine' },
       { time: '17:00', activity: '出發', icon: '💨' },
       { time: '18:00', activity: '找晚餐 (美國村)', icon: '🎡', link: 'https://www.google.com/maps/search/?api=1&query=American+Village+Okinawa' },
       { time: '20:00', activity: '出發', icon: '💨' },
-      { time: '20:30', activity: '民宿 Okinawa Kona Garden', icon: '🏠', link: 'https://www.google.com/maps/search/?api=1&query=Okinawa+Kona+Garden' },
+      { time: '20:30', activity: '民宿 Okinawa Kona Garden', icon: '🏠', link: 'https://www.google.com/maps/search/?api=1&query=沖繩,%20宇流麻,%20石川東恩納１５６４−２' },
     ]
   },
   {
@@ -29,7 +29,7 @@ const itinerary = [
       { time: '17:00', activity: '回程', icon: '↩️' },
       { time: '18:30', activity: '燒肉 琉球の牛 恩納店', icon: '🥩', link: 'https://www.google.com/maps/search/?api=1&query=Ryukyu+no+Ushi+Onna' },
       { time: '20:00', activity: '出發', icon: '💨' },
-      { time: '20:20', activity: '民宿', icon: '🏠' },
+      { time: '20:20', activity: '民宿', icon: '🏠', link: 'https://www.google.com/maps/search/?api=1&query=沖繩,%20宇流麻,%20石川東恩納１５６４−２' },
     ]
   },
   {
@@ -40,7 +40,7 @@ const itinerary = [
       { time: '10:00', activity: '出發', icon: '🚗' },
       { time: '10:40', activity: '兒童王國', icon: '🦁', link: 'https://www.google.com/maps/search/?api=1&query=Okinawa+Zoo+%26+Museum' },
       { time: '16:00', activity: '出發', icon: '💨' },
-      { time: '16:20', activity: '泡瀨漁港 (晚餐)', icon: '🦞', link: 'https://www.google.com/maps/search/?api=1&query=Awase+Fish+Market' },
+      { time: '16:20', activity: '泡瀨漁港 (晚餐)', icon: '🦞', link: 'https://www.google.com/maps/search/?api=1&query=泡瀨漁港' },
       { time: '18:00', activity: '出發', icon: '💨' },
       { time: '19:00', activity: '民宿 check in (Chura Gahna House Tsubogawa Naha)', icon: '🏨', link: 'https://www.google.com/maps/search/?api=1&query=Chura+Gahna+House+Tsubogawa+Naha' },
     ]
@@ -56,7 +56,7 @@ const itinerary = [
       { time: '12:20', activity: 'PARCO CITY (萬代扭蛋)', icon: '🛍️', link: 'https://www.google.com/maps/search/?api=1&query=PARCO+CITY+Okinawa' },
       { time: '17:00', activity: '出發', icon: '💨' },
       { time: '17:40', activity: '民宿 (Chura Gahna House Tsubogawa Naha)', icon: '🏨', link: 'https://www.google.com/maps/search/?api=1&query=Chura+Gahna+House+Tsubogawa+Naha' },
-      { time: '18:30', activity: '國際通吃晚餐逛街', icon: '🍜', link: 'https://www.google.com/maps/search/?api=1&query=Kokusai+Dori' },
+      { time: '18:30', activity: '國際通吃晚餐逛街', icon: '🍜', link: 'https://www.google.com/maps/search/?api=1&query=Kokusai-dori' },
     ]
   },
   {
@@ -71,7 +71,7 @@ const itinerary = [
       { time: '14:00', activity: '出發', icon: '💨' },
       { time: '14:30', activity: 'iias 沖繩豐崎 (萬代扭蛋+DDM)', icon: '🛍️', link: 'https://www.google.com/maps/search/?api=1&query=iias+Okinawa+Toyosaki' },
       { time: '17:00', activity: '出發', icon: '💨' },
-      { time: '17:15', activity: 'OTS臨空豐崎營業所', icon: '🚗', link: 'https://www.google.com/maps/search/?api=1&query=OTS+Rinku+Toyosaki' },
+      { time: '17:15', activity: 'OTS臨空豐崎營業所', icon: '🚗', link: 'https://www.google.com/maps/search/?api=1&query=OTS臨空豐崎營業所' },
       { time: '18:30', activity: '前到那霸機場', icon: '✈️', link: 'https://www.google.com/maps/search/?api=1&query=Naha+Airport' },
     ]
   },
@@ -86,6 +86,27 @@ const itinerary = [
           { name: 'Okinawa Churaumi Aquarium', image: 'https://bobbyfun.tw/wp-content/uploads/2025/06/20250815004726_0_032993.jpg' },
         ]
       }
+    ]
+  },
+  {
+    day: 'Map Code',
+    date: 'Navigation Info',
+    type: 'mapcodes',
+    codes: [
+      { name: '那霸機場 (Naha Airport)', code: '33 123 404', note: 'Day 1 & 5' },
+      { name: 'OTS臨空豐崎營業所 (OTS Rent-a-car)', code: '232 543 542*63', note: 'Day 1 & 5' },
+      { name: '波上宮 (Naminoue Shrine)', code: '33 185 023*55', note: 'Day 1' },
+      { name: '美國村 (American Village)', code: '33 526 450*65', note: 'Day 1' },
+      { name: '美麗海水族館 (Churaumi Aquarium)', code: '553 075 797*77', note: 'Day 2' },
+      { name: '燒肉 琉球の牛 恩納店', code: '206 096 716', note: 'Day 2' },
+      { name: '兒童王國 (Okinawa Zoo & Museum)', code: '33 561 798*88', note: 'Day 3' },
+      { name: '泡瀨漁港 (Awase Fish Market)', code: '33 565 310', note: 'Day 3' },
+      { name: '宜野灣海濱公園 (Ginowan Seaside Park)', code: '33 403 300*83', note: 'Day 4' },
+      { name: 'PARCO CITY', code: '33 308 868*53', note: 'Day 4' },
+      { name: '國際通 (Kokusai Dori)', code: '33 157 444*60', note: 'Day 4' },
+      { name: '達摩寺 (Daruma Temple)', code: '33 161 597*46', note: 'Day 5' },
+      { name: '玉泉洞 (Gyokusendo)', code: '232 495 333*86', note: 'Day 5' },
+      { name: 'iias 沖繩豐崎', code: '232 543 368*63', note: 'Day 5' },
     ]
   }
 ]
@@ -105,9 +126,8 @@ const currentItem = computed(() => itinerary[currentDay.value])
       <!-- Header -->
       <header class="text-center mb-12 animate-fade-in">
         <h1 class="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 mb-4 drop-shadow-sm tracking-tight">
-          Okinawa Trip 🌴
+          沖繩旅遊行程 🌴
         </h1>
-        <p class="text-slate-400">Your 5-day adventure plan</p>
       </header>
 
       <!-- Tabs Navigation -->
@@ -212,6 +232,38 @@ const currentItem = computed(() => itinerary[currentDay.value])
                 </div>
               </div>
             </div>
+          </div>
+
+          <!-- Map Codes View -->
+          <div v-else-if="currentItem.type === 'mapcodes'" class="overflow-x-auto animate-fade-in">
+
+            <div>
+              map code 查詢網址: <a href="https://www.mapion.co.jp/" target="blank">https://www.mapion.co.jp/</a>
+            </div>
+
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="border-b border-white/10 text-slate-300">
+                  <th class="py-4 px-4 font-bold">名稱 (Name)</th>
+                  <th class="py-4 px-4 font-bold text-right text-nowrap">Map Code</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/5">
+                <tr 
+                  v-for="(code, idx) in currentItem.codes" 
+                  :key="idx"
+                  class="group hover:bg-white/5 transition-colors"
+                >
+                  <td class="py-3 px-4 text-slate-200 font-medium group-hover:text-white transition-colors">
+                    {{ code.name }}
+                    <span v-if="code.note" class="block text-xs text-slate-500 font-normal mt-1">{{ code.note }}</span>
+                  </td>
+                  <td class="py-3 px-4 text-right font-mono text-lg text-emerald-300 group-hover:text-emerald-200 tracking-wider">
+                    {{ code.code }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
         </div>
