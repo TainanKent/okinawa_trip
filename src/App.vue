@@ -9,6 +9,8 @@ const itinerary = [
     date: 'Arrival & Naha',
     type: 'schedule',
     schedule: [
+      { time: '07:00~07:30', activity: '抵達高雄小港機場(順便吃東西沒有飛機餐)', icon: '✈️', link: '' },
+      { time: '10:10', activity: '高雄小港機場起飛', icon: '✈️', link: '' },
       { time: '13:00', activity: '那霸機場 (拿行李+坐接駁車到OTS臨空豐崎營業所取車)', icon: '✈️', link: 'https://www.google.com/maps/search/?api=1&query=Naha+Airport' },
       { time: '15:00', activity: '取車 (OTS臨空豐崎營業所)', icon: '🚗', link: 'https://www.google.com/maps/search/?api=1&query=OTS臨空豐崎營業所' },
       { time: '15:30', activity: '開車出發', icon: '💨' },
@@ -107,6 +109,111 @@ const itinerary = [
       { name: '達摩寺 (Daruma Temple)', code: '33 161 597*46', note: 'Day 5' },
       { name: '玉泉洞 (Gyokusendo)', code: '232 495 333*86', note: 'Day 5' },
       { name: 'iias 沖繩豐崎', code: '232 543 368*63', note: 'Day 5' },
+    ]
+  },
+  {
+    day: '餐廳',
+    date: 'Dining Plan',
+    type: 'restaurants',
+    days: [
+      {
+        dayTitle: 'Day 1',
+        rows: [
+          { 
+            time: '晚餐(參考)', 
+            restaurant: '塔可飯咖啡(Taco Rice Cafe)', 
+            address: '沖縄県中頭郡北谷町美浜9-1 (Depot Island C棟 2F)', 
+            note: 'Mapcode: 33 526 450*63' 
+          },
+          { 
+            time: '晚餐(參考)', 
+            restaurant: '迴轉壽司市場-美浜店', 
+            address: '沖縄県中頭郡北谷町美浜2-4-3', 
+            note: 'Mapcode: 33 526 489*78' 
+          },
+          { 
+            time: '晚餐(參考)', 
+            restaurant: 'A&W 漢堡-美浜店', 
+            address: '沖縄県中頭郡北谷町美浜15-69 (Carnival Park Mihama 2F)', 
+            note: 'Mapcode: 33 526 317*74' 
+          },
+        ]
+      },
+      {
+        dayTitle: 'Day 2',
+        rows: [
+          { 
+            time: '午餐', 
+            restaurant: 'INOH海景餐廳(吃到飽)', 
+            address: '美麗海水族館 4樓',
+            note: 'MapCode：553 075 797*74' 
+          },
+          { 
+            time: '晚餐(建議訂位)', 
+            restaurant: '燒肉 琉球の牛 恩納店-別館', 
+            address: '沖縄県国頭郡恩納村前兼久101', 
+            note: '建議搜尋「前兼久101」或使用MapCode：206 096 716' 
+          }
+        ]
+      },
+      {
+        dayTitle: 'Day 3',
+        rows: [
+          { 
+            time: '早餐+午餐(帶去沖繩王國吃)', 
+            restaurant: 'lawson 便利商店', 
+            address: '251-1 Ishikawa Higashionna, Uruma, Okinawa 904-1111日本', 
+            note: 'MapCode：33 895 250*74' 
+          },
+          { 
+            time: '午餐(沖繩王國自己找東西吃)', 
+            restaurant: '', 
+            address: '', 
+            note: 'MapCode：' 
+          },
+          { 
+            time: '晚餐', 
+            restaurant: '泡瀨漁港', 
+            address: '904-2172 沖縄県沖縄市泡瀬1-11-34', 
+            note: 'MapCode：33 565 341*02' 
+          }
+          
+        ]
+      },
+      {
+        dayTitle: 'Day 4',
+        rows: [
+          { 
+            time: '午餐', 
+            restaurant: 'PARCO CITY', 
+            address: '沖縄県浦添市西洲3丁目1-1', 
+            note: 'MapCode：33 339 276 ' 
+          },
+          { 
+            time: '晚餐', 
+            restaurant: '國際通', 
+            address: '', 
+            note: 'MapCode： ' 
+          }
+        ]
+      },
+      {
+        dayTitle: 'Day 5',
+        rows: [
+          { 
+            time: '午餐', 
+            restaurant: '玉泉洞', 
+            address: '', 
+            note: 'MapCode： ' 
+          },
+          { 
+            time: '晚餐', 
+            restaurant: '那霸機場', 
+            address: '', 
+            note: 'MapCode： ' 
+          }
+        ]
+      }
     ]
   }
 ]
@@ -264,6 +371,56 @@ const currentItem = computed(() => itinerary[currentDay.value])
                 </tr>
               </tbody>
             </table>
+          </div>
+
+          <!-- Restaurant View -->
+          <div v-else-if="currentItem.type === 'restaurants'" class="space-y-8 animate-fade-in">
+
+            <div v-for="(dayData, dayIndex) in currentItem.days" :key="dayIndex" class="bg-slate-900/50 backdrop-blur-sm rounded-2xl p-6 border border-white/5 shadow-inner">
+              <h3 class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-rose-300 mb-6 pl-3 border-l-4 border-orange-500/50 flex items-center gap-2">
+                {{ dayData.dayTitle }}
+                <span v-if="!dayData.rows || dayData.rows.length === 0" class="text-xs font-normal text-slate-500 border border-slate-700 px-2 py-0.5 rounded-full bg-slate-800">No Reservations</span>
+              </h3>
+              
+              <div class="overflow-hidden rounded-xl border border-white/5">
+                <table class="w-full text-left border-collapse bg-slate-900/30">
+                  <thead class="bg-white/5">
+                    <tr class="text-slate-300 text-sm">
+                      <th class="py-3 px-4 font-semibold w-[150px] border-b border-white/10">時間</th>
+                      <th class="py-3 px-4 font-semibold border-b border-white/10">餐廳</th>
+                      <th class="py-3 px-4 font-semibold border-b border-white/10">地址</th>
+                      <th class="py-3 px-4 font-semibold border-b border-white/10">備註</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-white/5">
+                    <tr v-if="!dayData.rows || dayData.rows.length === 0">
+                        <td colspan="3" class="py-6 text-center text-slate-500 italic">
+                          No restaurants planned for this day
+                        </td>
+                    </tr>
+                    <tr 
+                      v-else
+                      v-for="(row, rIdx) in dayData.rows" 
+                      :key="rIdx"
+                      class="group hover:bg-white/5 transition-colors"
+                    >
+                      <td class="py-3 px-4 text-orange-300 font-mono text-sm group-hover:text-orange-200">
+                        {{ row.time }}
+                      </td>
+                      <td class="py-3 px-4 text-slate-200 font-medium group-hover:text-white transition-colors">
+                        {{ row.restaurant }}
+                      </td>
+                      <td class="py-3 px-4 text-slate-400 text-sm group-hover:text-slate-300">
+                        {{ row.address }}
+                      </td>
+                      <td class="py-3 px-4 text-slate-400 text-sm group-hover:text-slate-300">
+                        {{ row.note }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
 
         </div>
