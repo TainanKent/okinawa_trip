@@ -382,14 +382,14 @@ const currentItem = computed(() => itinerary[currentDay.value])
                 <span v-if="!dayData.rows || dayData.rows.length === 0" class="text-xs font-normal text-slate-500 border border-slate-700 px-2 py-0.5 rounded-full bg-slate-800">No Reservations</span>
               </h3>
               
-              <div class="overflow-hidden rounded-xl border border-white/5">
+              <div class="overflow-x-auto rounded-xl border border-white/5">
                 <table class="w-full text-left border-collapse bg-slate-900/30">
                   <thead class="bg-white/5">
                     <tr class="text-slate-300 text-sm">
-                      <th class="py-3 px-4 font-semibold w-[150px] border-b border-white/10">時間</th>
-                      <th class="py-3 px-4 font-semibold border-b border-white/10">餐廳</th>
-                      <th class="py-3 px-4 font-semibold border-b border-white/10">地址</th>
-                      <th class="py-3 px-4 font-semibold border-b border-white/10">備註</th>
+                      <th class="py-3 px-4 font-semibold min-w-[150px] border-b border-white/10">時間</th>
+                      <th class="py-3 px-4 font-semibold min-w-[200px] border-b border-white/10">餐廳</th>
+                      <th class="py-3 px-4 font-semibold min-w-[200px] border-b border-white/10">地址</th>
+                      <th class="py-3 px-4 font-semibold min-w-[200px] border-b border-white/10">備註</th>
                     </tr>
                   </thead>
                   <tbody class="divide-y divide-white/5">
