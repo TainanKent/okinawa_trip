@@ -26,7 +26,7 @@ const itinerary = [
     date: 'Aquarium & Beef',
     type: 'schedule',
     schedule: [
-      { time: '10:00', activity: '出發', icon: '🚗' },
+      { time: '09:30', activity: '出發', icon: '🚗' },
       { time: '11:20', activity: '美麗海水族館 (裡面有午餐)', icon: '🐋', link: 'https://www.google.com/maps/search/?api=1&query=Okinawa+Churaumi+Aquarium' },
       { time: '17:00', activity: '回程', icon: '↩️' },
       { time: '18:30', activity: '燒肉 琉球の牛 恩納店', icon: '🥩', link: 'https://www.google.com/maps/search/?api=1&query=Ryukyu+no+Ushi+Onna' },
@@ -39,7 +39,7 @@ const itinerary = [
     date: 'Zoo & Seafood',
     type: 'schedule',
     schedule: [
-      { time: '10:00', activity: '出發', icon: '🚗' },
+      { time: '09:30', activity: '出發', icon: '🚗' },
       { time: '10:40', activity: '兒童王國', icon: '🦁', link: 'https://www.google.com/maps/search/?api=1&query=Okinawa+Zoo+%26+Museum' },
       { time: '16:00', activity: '出發', icon: '💨' },
       { time: '16:20', activity: '泡瀨漁港 (晚餐)', icon: '🦞', link: 'https://www.google.com/maps/search/?api=1&query=泡瀨漁港' },
@@ -190,10 +190,34 @@ const itinerary = [
             note: 'MapCode：33 339 276 ' 
           },
           { 
-            time: '晚餐', 
-            restaurant: '國際通', 
+            time: '晚餐(參考)', 
+            restaurant: '國際通-暖暮拉麵', 
+            address: '', 
+            note: '聽說很多人' 
+          },
+          { 
+            time: '晚餐(參考)', 
+            restaurant: '國際通-琉家拉麵', 
             address: '', 
             note: 'MapCode： ' 
+          },
+          { 
+            time: '晚餐(參考)', 
+            restaurant: '國際通-一蘭拉麵', 
+            address: '', 
+            note: ' ' 
+          },
+          { 
+            time: '晚餐(參考)', 
+            restaurant: '國際通-國際通屋台村', 
+            address: '', 
+            note: '營業時間：11:00〜01：00  日本路邊攤 看起來位子不多' 
+          },
+          { 
+            time: '晚餐(參考)', 
+            restaurant: '國際通-麥當勞', 
+            address: '', 
+            note: '' 
           }
         ]
       },
@@ -207,11 +231,24 @@ const itinerary = [
             note: 'MapCode： ' 
           },
           { 
-            time: '晚餐', 
-            restaurant: '那霸機場', 
+            time: '晚餐(參考)', 
+            restaurant: '那霸機場(3F)-牛排屋88', 
             address: '', 
-            note: 'MapCode： ' 
+            note: '33 123 404' 
+          },
+          { 
+            time: '晚餐(參考)', 
+            restaurant: '那霸機場(4F)-吉野家 Ｘ 花丸烏龍麵', 
+            address: '', 
+            note: '' 
+          },
+          { 
+            time: '晚餐(參考)', 
+            restaurant: '那霸機場(3F)-A&W漢堡', 
+            address: '', 
+            note: '' 
           }
+          
         ]
       }
     ]
