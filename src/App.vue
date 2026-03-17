@@ -52,8 +52,8 @@ const itinerary = [
     date: 'Shopping & Park',
     type: 'schedule',
     schedule: [
-      { time: '09:30', activity: '出發', icon: '🚗' },
-      { time: '10:10', activity: '宜野灣海濱公園', icon: '🏞️', link: 'https://www.google.com/maps/search/?api=1&query=Ginowan+Seaside+Park' },
+      { time: '09:00', activity: '出發', icon: '🚗' },
+      { time: '09:40', activity: '沖繩安良波公園', icon: '🏞️', link: 'https://www.google.com/maps/search/?api=1&query=Ginowan+Seaside+Park' },
       { time: '12:00', activity: '出發', icon: '💨' },
       { time: '12:20', activity: 'PARCO CITY (萬代扭蛋)', icon: '🛍️', link: 'https://www.google.com/maps/search/?api=1&query=PARCO+CITY+Okinawa' },
       { time: '17:00', activity: '出發', icon: '💨' },
