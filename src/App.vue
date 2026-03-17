@@ -27,9 +27,9 @@ const itinerary = [
     type: 'schedule',
     schedule: [
       { time: '09:30', activity: '出發', icon: '🚗' },
-      { time: '11:20', activity: '美麗海水族館 (裡面有午餐)', icon: '🐋', link: 'https://www.google.com/maps/search/?api=1&query=Okinawa+Churaumi+Aquarium' },
+      { time: '11:20', activity: '美麗海水族館 (午餐預計吃INOH海景餐廳)', icon: '🐋', link: 'https://www.google.com/maps/search/?api=1&query=Okinawa+Churaumi+Aquarium' },
       { time: '17:00', activity: '回程', icon: '↩️' },
-      { time: '18:30', activity: '燒肉 琉球の牛 恩納店', icon: '🥩', link: 'https://www.google.com/maps/search/?api=1&query=Ryukyu+no+Ushi+Onna' },
+      { time: '18:30', activity: '燒肉 琉球の牛恩納別館', icon: '🥩', link: 'https://www.google.com/maps/search/?api=1&query=Ryukyu+no+Ushi+Onna' },
       { time: '20:00', activity: '出發', icon: '💨' },
       { time: '20:20', activity: '民宿', icon: '🏠', link: 'https://www.google.com/maps/search/?api=1&query=沖繩,%20宇流麻,%20石川東恩納１５６４−２' },
     ]
@@ -57,7 +57,7 @@ const itinerary = [
       { time: '12:00', activity: '出發', icon: '💨' },
       { time: '12:20', activity: 'PARCO CITY (萬代扭蛋)', icon: '🛍️', link: 'https://www.google.com/maps/search/?api=1&query=PARCO+CITY+Okinawa' },
       { time: '17:00', activity: '出發', icon: '💨' },
-      { time: '17:40', activity: '民宿 (Chura Gahna House Tsubogawa Naha)', icon: '🏨', link: 'https://www.google.com/maps/search/?api=1&query=Chura+Gahna+House+Tsubogawa+Naha' },
+      { time: '17:40', activity: '民宿 (Chura Gahna House Tsubogawa Naha)(可不回去民宿直接去國際通)', icon: '🏨', link: 'https://www.google.com/maps/search/?api=1&query=Chura+Gahna+House+Tsubogawa+Naha' },
       { time: '18:30', activity: '國際通吃晚餐逛街', icon: '🍜', link: 'https://www.google.com/maps/search/?api=1&query=Kokusai-dori' },
     ]
   },
@@ -74,7 +74,7 @@ const itinerary = [
       { time: '14:30', activity: 'iias 沖繩豐崎 (萬代扭蛋+DDM)', icon: '🛍️', link: 'https://www.google.com/maps/search/?api=1&query=iias+Okinawa+Toyosaki' },
       { time: '17:00', activity: '出發', icon: '💨' },
       { time: '17:15', activity: 'OTS臨空豐崎營業所', icon: '🚗', link: 'https://www.google.com/maps/search/?api=1&query=OTS臨空豐崎營業所' },
-      { time: '18:30', activity: '前到那霸機場', icon: '✈️', link: 'https://www.google.com/maps/search/?api=1&query=Naha+Airport' },
+      { time: '18:00', activity: '前到那霸機場', icon: '✈️', link: 'https://www.google.com/maps/search/?api=1&query=Naha+Airport' },
     ]
   },
   {
