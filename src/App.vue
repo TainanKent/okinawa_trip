@@ -16,8 +16,8 @@ const itinerary = [
       { time: '15:30', activity: '開車出發', icon: '💨' },
       { time: '15:45', activity: '波上宮', icon: '⛩️', link: 'https://www.google.com/maps/search/?api=1&query=Naminoue+Shrine' },
       { time: '17:00', activity: '出發', icon: '💨' },
-      { time: '18:00', activity: '找晚餐 (美國村)', icon: '🎡', link: 'https://www.google.com/maps/search/?api=1&query=American+Village+Okinawa' },
-      { time: '20:00', activity: '出發', icon: '💨' },
+      { time: '18:00', activity: '晚餐(美國村)(燒肉北谷龍)燒肉吃到飽', icon: '🎡', link: 'https://www.google.com/maps/search/?api=1&query=American+Village+Okinawa' },
+      { time: '20:00', activity: '出發(在美國村找7-11買早餐)', icon: '💨' },
       { time: '20:30', activity: '民宿 Okinawa Kona Garden', icon: '🏠', link: 'https://www.google.com/maps/search/?api=1&query=沖繩,%20宇流麻,%20石川東恩納１５６４−２' },
     ]
   },
@@ -29,9 +29,11 @@ const itinerary = [
       { time: '09:30', activity: '出發', icon: '🚗' },
       { time: '11:20', activity: '美麗海水族館 (午餐預計吃INOH海景餐廳)', icon: '🐋', link: 'https://www.google.com/maps/search/?api=1&query=Okinawa+Churaumi+Aquarium' },
       { time: '17:00', activity: '回程', icon: '↩️' },
-      { time: '18:30', activity: '燒肉 琉球の牛恩納別館', icon: '🥩', link: 'https://www.google.com/maps/search/?api=1&query=Ryukyu+no+Ushi+Onna' },
-      { time: '20:00', activity: '出發', icon: '💨' },
-      { time: '20:20', activity: '民宿', icon: '🏠', link: 'https://www.google.com/maps/search/?api=1&query=沖繩,%20宇流麻,%20石川東恩納１５６４−２' },
+      { time: '17:40', activity: '暖暮拉麵 名護店(無法定位)', icon: '🥩', link: 'https://www.google.com/maps/search/?api=1&query=Ryukyu+no+Ushi+Onna' },
+      { time: '19:30', activity: '出發', icon: '💨' },
+      { time: '20:20', activity: 'San-A Ishikawa City(超商買早餐)', icon: '💨' },
+      { time: '21:00', activity: '出發', icon: '💨' },
+      { time: '21:10', activity: '民宿', icon: '🏠', link: 'https://www.google.com/maps/search/?api=1&query=沖繩,%20宇流麻,%20石川東恩納１５６４−２' },
     ]
   },
   {
